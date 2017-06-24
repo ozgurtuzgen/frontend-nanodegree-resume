@@ -2,7 +2,7 @@
 // work contains an array of jobs. Each object in the jobs array should contain an employer, title, location, dates worked and description strings.
 
 var work = {
-    jobs:[
+    jobs: [
         {
             employer: "STM",
             title: "Leader Software Engineer",
@@ -18,20 +18,20 @@ var work = {
             description: ""
         }
     ]
-}
+};
 
 // projects
 // projects contains an array of projects. Each object in the projects array should contain title, dates and description strings, and an images array with URL strings for project images.
 
 var projects = {
-    projects = [
+    projects: [
         {
             title: "Meytap",
             dates: "2017-...",
             description: "",
             images: [
-                "images/p1-1.png",
-                "images/p1-2.png"
+                "images/197x148.gif",
+                "images/197x148.gif"
             ]
         },
         {
@@ -39,8 +39,8 @@ var projects = {
             dates: "2011-2016",
             description: "",
             images: [
-                "images/p2-1.png",
-                "images/p2-2.png"
+                "images/197x148.gif",
+                "images/197x148.gif"
             ]
         },
         {
@@ -48,8 +48,8 @@ var projects = {
             dates: "2007-2010",
             description: "",
             images: [
-                "images/p3-1.png",
-                "images/p3-2.png"
+                "images/197x148.gif",
+                "images/197x148.gif"
             ]
         },
         {
@@ -57,13 +57,13 @@ var projects = {
             dates: "2006-2007",
             description: "",
             images: [
-                "images/p4-1.png",
-                "images/p4-2.png"
+                "images/197x148.gif",
+                "images/197x148.gif"
             ]
         }
 
     ]
-}
+};
 
 
 // bio
@@ -72,7 +72,7 @@ var projects = {
 var bio = {
     name: "Ozgur Tuzgen",
     role: "Leader Software Engineer",
-    welcomeMsg: "Welcome to Hell!",
+    welcomeMsg: "Development freak welcomes you!",
     pictureUrl: "images/Capture.png",
     contacts: {
         email: "ozgurtuzgen@hotmail.com",
@@ -81,8 +81,8 @@ var bio = {
         github: "ozgurtuzgen",
         location: "Ankara"
     },
-    
-    skills: ["C#","Javascript","Typescript" ]
+
+    skills: ["C#", "Javascript", "Typescript"]
 };
 
 // education
@@ -91,30 +91,30 @@ var bio = {
 // education also contains an onlineCourses array. Each object in the onlineCourses array should contain a title, school, dates and url strings.
 
 var education = {
-    schools : [
+    schools: [
         {
             name: "Hacettepe University",
             location: "Ankara",
             degree: "PhD",
             majors: ["Business Administration"],
-            dates: "2012",
-            url: "http://hacettepe.edu.tr"
+            dates: "2011-Suspended",
+            url: "http://hacettepe.edu.tr",
 
         },
-         {
+        {
             name: "Hacettepe University",
             location: "Ankara",
             degree: "Masters",
             majors: ["MBA"],
-            dates: "2010",
+            dates: "2008-2010",
             url: "http://hacettepe.edu.tr"
         },
-         {
+        {
             name: "Ege University",
             location: "Izmir",
             degree: "BA",
             majors: ["Computer Engineer"],
-            dates: "2006",
+            dates: "2002-2006",
             url: "http://ege.edu.tr"
         }
 
@@ -135,113 +135,88 @@ var education = {
 
         }
     ]
+};
+
+$("#header").append(HTMLbioPic.replace("%data%", bio.pictureUrl));
+
+$("#header").append(HTMLheaderName.replace("%data%", bio.name));
+$("#header").append(HTMLheaderRole.replace("%data%", bio.role));
+
+$("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg));
+
+
+$("#header").append(HTMLmobile.replace("%data%", bio.contacts["mobile"]));
+$("#header").append(HTMLemail.replace("%data%", bio.contacts["email"]));
+
+$("#footerContacts").append(HTMLgithub.replace("%data%", bio.contacts["github"]));
+$("#footerContacts").append(HTMLtwitter.replace("%data%", bio.contacts["twitter"]));
+$("#footerContacts").append(HTMLlocation.replace("%data%", bio.contacts["location"]));
+
+
+if (bio.skills.length > 0) {
+    $("#header").append(HTMLskillsStart);
+
+    for (var i = 0; i < bio.skills.length; i++) {
+        $("#header").append(HTMLskills.replace("%data%", bio.skills[i]));
+    }
 }
 
+var displayWork = function () {
+    $("#workExperience").append(HTMLworkStart);
 
-// /*
-// This is empty on purpose! Your code to build the resume will go here.
-//  */
+    for (index in work.jobs) {
+        $(".work-entry:last").append(HTMLworkEmployer.replace("%data%", work.jobs[index].employer) + HTMLworkTitle.replace("%data%", work.jobs[index].title));
+        $(".work-entry:last").append(HTMLworkDates.replace("%data%", work.jobs[index].datesWorked));
+        $(".work-entry:last").append(HTMLworkLocation.replace("%data%", work.jobs[index].location));
+        $(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.jobs[index].description));
 
-// // $("#main").append("Ozgur Tuzgen");
+    }
+}();
 
-// // var awesomeThougths = "I am Ozgur and I am AWESOME!"
+var displayEducation = function () {
+    $("#education").append(HTMLschoolStart);
 
-// // console.log(awesomeThougths);
+    for (index in education.schools) {
+        $(".education-entry:last").append(HTMLschoolName.replace("%data%", education.schools[index].name) + HTMLschoolDegree.replace("%data%", education.schools[index].degree));
+        $(".education-entry:last").append(HTMLschoolDates.replace("%data%", education.schools[index].dates));
+        $(".education-entry:last").append(HTMLschoolLocation.replace("%data%", education.schools[index].location));
+        $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[index].majors[0]));
+    }
 
-// // var funThougths = awesomeThougths.replace("AWESOME","FUN");
-
-// // $("#main").append(funThougths);
-
-
-// // var formattedName = HTMLheaderName.replace("%data%","Ozgur Tuzgen");
-
-// // var formmatedRole = HTMLheaderRole.replace("%data%","Leader Software Engineer");
-
-// // $("#header").append(formattedName);
-
-// // $("#header").append(formmatedRole);
-
-
-// var bio = {
-//     name: "Ozgur",
-//     role: "Leader Software Engineer",
-//     contacts: {
-//         email: "ozgurtuzgen@hotmail.com",
-//         mobile: "ozgurtuzgen@hotmail.com",
-//         twitter: "",
-//         github: "ozgurtuzgen",
-//         location: "Ankara"
-//     },
-//     pictureUrl: "images/Capture.png",
-//     welcomeMsg: "Welcome to Hell!",
-//     skills: ["C#","Javascript","Typescript" ]
-// };
+    $(".education-entry:last").append(HTMLonlineClasses);
+    for (index in education.onlineCourses) {
+        $(".education-entry:last").append(HTMLonlineTitle.replace("%data%", education.onlineCourses[index].title) + HTMLonlineSchool.replace("%data%", education.onlineCourses[index].school));
+        $(".education-entry:last").append(HTMLonlineDates.replace("%data%", education.onlineCourses[index].dates));
+        $(".education-entry:last").append(HTMLonlineURL.replace("%data%", education.onlineCourses[index].url));
+    }
+}();
 
 
-// // var formattedName = HTMLheaderName.replace("%data%",bio.name);
-// // var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
-// // var formattedContactInfo = HTMLcontactGeneric.replace("%data%",bio.contactInfo);
-// // formattedContactInfo = formattedContactInfo.replace("%contact%","mail");
-
-// // var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%",bio.welcomeMsg);
-// // var formattedSkills = HTMLskills.replace("%data%",bio.skills);
-
-// // var formattedPicture = HTMLbioPic.replace("%data%",bio.pictureUrl);
+$(document).click(function (loc) {
+    logClicks(loc.pageX, loc.pageY);
+});
 
 
-// // $("#header").append(formattedName);
-// // $("#header").append(formattedRole);
-// // $("#header").append(formattedContactInfo);
-// // $("#header").append(formattedSkills);
-// // $("#header").append(formattedWelcomeMsg);
-// // $("#header").append(formattedPicture);
+$("#main").append(internationalizeButton);
+var inName = function (name) {
+    var words = name.split(" ");
+    words[0] = words[0].slice(0, 1).toUpperCase() + words[0].slice(1).toLowerCase();
+    return words[0] + " " + words[1].toUpperCase();
+}
 
-// var work = {};
+projects.display = function () {
+    $("#projects").append(HTMLprojectStart);
 
-// work.currentJobPosition = "Leader Software Engineer";
-// work.employer = "STM";
-// work.yearsWorked = "2010-...";
-// work.city = "Ankara";
-
-// var education = {};
-// education["lastSchool"] = "Hacettepe Universtiy";
-// education["yearsAttended"] = "2010-2012";
-// education["city"] = "Ankara";
-
-
-
-// // $("#header").append(work.currentJobPosition);
-// // $("#header").append(work.employer);
-// // $("#header").append(work.yearsWorked);
-// // $("#header").append(work.city);
-// // $("#header").append(education["lastSchool"]);
-// // $("#header").append(education["yearsAttended"]);
-// // $("#header").append(education["city"]);
+    for (var i = 0; i < projects.projects.length; i++) {
+        $(".project-entry:last").append(HTMLprojectTitle.replace("%data%", projects.projects[i].title));
+        $(".project-entry:last").append(HTMLprojectDates.replace("%data%", projects.projects[i].dates));
+        $(".project-entry:last").append(HTMLprojectDescription.replace("%data%", projects.projects[i].description));
+        for (var k = 0; k < projects.projects[i].images.length; k++) {
+            var element = projects.projects[i].images[k];
+            $(".project-entry:last").append(HTMLprojectImage.replace("%data%", element));
+        }
+    }
+}();
 
 
-// var education = {
-//     schools : [
-//         {
-//             name: "Hacettepe University",
-//             location: "Ankara",
-//             degree: "PhD",
-//             majors: ["Business Administration"],
-//             minors: [
-//                 {},
-//                 {}
-//             ],
-//             dates: "2012",
-//             url: "http://hacettepe.edu.tr"
-
-//         }
-//     ],
-//     onlineCourses: [
-//         {
-//             title: "Udacity FEND",
-//             school: "Udacity",
-//             dates: 2017,
-//             url: "http://www.udacity.com"
-
-//         }
-//     ]
-// }
+$("#mapDiv").append(googleMap);
