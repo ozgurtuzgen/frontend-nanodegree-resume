@@ -161,7 +161,7 @@ if (bio.skills.length > 0) {
     }
 }
 
-var displayWork = function () {
+work.display = function () {
     $("#workExperience").append(HTMLworkStart);
 
     for (index in work.jobs) {
@@ -173,7 +173,7 @@ var displayWork = function () {
     }
 }();
 
-var displayEducation = function () {
+education.display = function () {
     $("#education").append(HTMLschoolStart);
 
     for (index in education.schools) {
