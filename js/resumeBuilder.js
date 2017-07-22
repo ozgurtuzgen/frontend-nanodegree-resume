@@ -207,12 +207,4 @@ $(document).click(function (loc) {
     logClicks(loc.pageX, loc.pageY);
 });
 
-
-$("#main").append(internationalizeButton);
-var inName = function (name) {
-    var words = name.split(" ");
-    words[0] = words[0].slice(0, 1).toUpperCase() + words[0].slice(1).toLowerCase();
-    return words[0] + " " + words[1].toUpperCase();
-};
-
 $("#mapDiv").append(googleMap);
