@@ -146,8 +146,8 @@ var projects = {
             dates: "2017-...",
             description: "Enterprise Web Application with several technologies like C#, WebApi, Entity Framework, Angular, Oracle BPM, Oracle BI",
             images: [
-                "images/197x148.gif",
-                "images/197x148.gif"
+                "images/1.png",
+                "images/2.jpg"
             ]
         },
         {
@@ -155,8 +155,8 @@ var projects = {
             dates: "2011-2016",
             description: "Enterprise Web Application with several technologies like C#, WCF, Entity Framework, Silverlight, Java, Biztalk Server",
             images: [
-                "images/197x148.gif",
-                "images/197x148.gif"
+                "images/3.jpg",
+                "images/4.jpg"
             ]
         },
         {
@@ -164,8 +164,8 @@ var projects = {
             dates: "2007-2010",
             description: "Enterprise Web Application with several technologies like C#, ASP.NET, MS Reporting Services",
             images: [
-                "images/197x148.gif",
-                "images/197x148.gif"
+                "images/5.jpg",
+                "images/6.png"
             ]
         },
         {
@@ -173,8 +173,8 @@ var projects = {
             dates: "2006-2007",
             description: "Enterprise Web Application with several technologies like C#, ASP.NET, Oracle",
             images: [
-                "images/197x148.gif",
-                "images/197x148.gif"
+                "images/7.png",
+                "images/8.png"
             ]
         }
 
