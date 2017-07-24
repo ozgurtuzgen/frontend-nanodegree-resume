@@ -16,7 +16,7 @@ var bio = {
     skills: ["C#", "Javascript", "Typescript"]
 };
 
-bio.display = function () {
+bio.display = function() {
 
     $("#header").append(HTMLbioPic.replace("%data%", bio.biopic));
 
@@ -34,13 +34,11 @@ bio.display = function () {
     $("#footerContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
 }();
 
-
 // education
 // education contains an array of schools. Each object in the schools array contains name, location, degree dates and url strings, and amajors array of major strings. 
 // education also contains an onlineCourses array. Each object in the onlineCourses array should contain a title, school, dates and url strings.
 var education = {
-    schools: [
-        {
+    schools: [{
             name: "Hacettepe University",
             location: "Ankara",
             degree: "PhD",
@@ -67,8 +65,7 @@ var education = {
         }
 
     ],
-    onlineCourses: [
-        {
+    onlineCourses: [{
             title: "Front-end Developer Nanodegree",
             school: "Udacity",
             dates: 2017,
@@ -85,7 +82,7 @@ var education = {
     ]
 };
 
-education.display = function () {
+education.display = function() {
     $("#education").append(HTMLschoolStart);
 
     for (var index = 0; index < education.schools.length; index++) {
@@ -107,8 +104,7 @@ education.display = function () {
 // work
 // work contains an array of jobs. Each object in the jobs array should contain an employer, title, location, dates worked and description strings.
 var work = {
-    jobs: [
-        {
+    jobs: [{
             employer: "STM",
             title: "Leader Software Engineer",
             location: "Ankara",
@@ -125,7 +121,7 @@ var work = {
     ]
 };
 
-work.display = function () {
+work.display = function() {
     $("#workExperience").append(HTMLworkStart);
 
     for (var index = 0; index < work.jobs.length; index++) {
@@ -140,8 +136,7 @@ work.display = function () {
 // projects
 // projects contains an array of projects. Each object in the projects array should contain title, dates and description strings, and an images array with URL strings for project images.
 var projects = {
-    projects: [
-        {
+    projects: [{
             title: "Meytap",
             dates: "2017-...",
             description: "Enterprise Web Application with several technologies like C#, WebApi, Entity Framework, Angular, Oracle BPM, Oracle BI",
@@ -181,7 +176,7 @@ var projects = {
     ]
 };
 
-projects.display = function () {
+projects.display = function() {
     $("#projects").append(HTMLprojectStart);
 
     for (var i = 0; i < projects.projects.length; i++) {
@@ -203,7 +198,7 @@ if (bio.skills.length > 0) {
     }
 }
 
-$(document).click(function (loc) {
+$(document).click(function(loc) {
     logClicks(loc.pageX, loc.pageY);
 });
 
