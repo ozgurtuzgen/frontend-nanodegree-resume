@@ -29,9 +29,9 @@ bio.display = function() {
     $("#header").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
     $("#header").append(HTMLemail.replace("%data%", bio.contacts.email));
 
-    $("#footerContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
-    $("#footerContacts").append(HTMLtwitter.replace("%data%", bio.contacts.twitter));
-    $("#footerContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
+    $("#topContacts, #footerContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
+    $("#topContacts, #footerContacts").append(HTMLtwitter.replace("%data%", bio.contacts.twitter));
+    $("#topContacts, #footerContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
 }();
 
 // education
@@ -68,14 +68,14 @@ var education = {
     onlineCourses: [{
             title: "Front-end Developer Nanodegree",
             school: "Udacity",
-            dates: 2017,
+            dates: "2017",
             url: "http://www.udacity.com"
 
         },
         {
             title: "Big Data Specialization",
             school: "Coursera",
-            dates: 2016,
+            dates: "2016",
             url: "http://www.coursera.com"
 
         }
@@ -108,14 +108,14 @@ var work = {
             employer: "STM",
             title: "Leader Software Engineer",
             location: "Ankara",
-            datesWorked: "2010-...",
+            dates: "2010-...",
             description: "Involved in several projects as well. Technical Lead expertise has been given in the projects."
         },
         {
             employer: "Meteksan Sistem",
             title: "Senior Software Engineer",
             location: "Ankara",
-            datesWorked: "2006-2010",
+            dates: "2006-2010",
             description: "Mostly junior years. Involved in several projects."
         }
     ]
@@ -126,7 +126,7 @@ work.display = function() {
 
     for (var index = 0; index < work.jobs.length; index++) {
         $(".work-entry:last").append(HTMLworkEmployer.replace("%data%", work.jobs[index].employer) + HTMLworkTitle.replace("%data%", work.jobs[index].title));
-        $(".work-entry:last").append(HTMLworkDates.replace("%data%", work.jobs[index].datesWorked));
+        $(".work-entry:last").append(HTMLworkDates.replace("%data%", work.jobs[index].dates));
         $(".work-entry:last").append(HTMLworkLocation.replace("%data%", work.jobs[index].location));
         $(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.jobs[index].description));
 
@@ -188,15 +188,17 @@ projects.display = function() {
             $(".project-entry:last").append(HTMLprojectImage.replace("%data%", element));
         }
     }
-}();
 
-if (bio.skills.length > 0) {
+    if (bio.skills.length > 0) {
     $("#header").append(HTMLskillsStart);
 
     for (var i = 0; i < bio.skills.length; i++) {
         $("#header").append(HTMLskills.replace("%data%", bio.skills[i]));
     }
 }
+}();
+
+
 
 $(document).click(function(loc) {
     logClicks(loc.pageX, loc.pageY);

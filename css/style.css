@@ -26,9 +26,10 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: lightsalmon;
   line-height: 48px;
   display: inline;
+  margin: 5px;
 }
 
 h2 {
@@ -44,6 +45,7 @@ h3 {
   font-size: 20px;
   color: #000;
   line-height: 22px;
+  margin: 5px;
 }
 
 h4 {
@@ -54,7 +56,6 @@ h4 {
 }
 
 h2,
-h3,
 h4,
 h5 {
   padding: 10px 5%;
@@ -68,6 +69,7 @@ h5 {
   color: #999;
   line-height: 16px;
   float: left;
+  margin: 2px;
 }
 
 .location-text {
@@ -97,19 +99,21 @@ a {
   font-size: 18px;
   color: #f3f3f3;
   line-height: 28px;
+  margin: 5px;
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color:lightsalmon;
   display: none;
+  margin: 5px;
 }
 
 .orange {
-  background-color: #f5ae23;
+  background-color: lightsalmon;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: lightsalmon;
 }
 
 .white-text {
@@ -145,7 +149,6 @@ a {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  padding: 10px;
 }
 
 .center-content {
