@@ -192,8 +192,8 @@ projects.display = function() {
     if (bio.skills.length > 0) {
     $("#header").append(HTMLskillsStart);
 
-    for (var i = 0; i < bio.skills.length; i++) {
-        $("#header").append(HTMLskills.replace("%data%", bio.skills[i]));
+    for (var j = 0; j < bio.skills.length; j++) {
+        $("#header").append(HTMLskills.replace("%data%", bio.skills[j]));
     }
 }
 }();
